@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id="gameTitle">Mini Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <style>
+        #eruda {
+            z-index: 1000000 !important;
+        }
+        #eruda-style {
+            z-index: 1000000 !important;
+        }
+        #game-container {
+            z-index: 1;
+        }
+    </style>
+    <script>
+        eruda.init({
+            tool: ['console', 'elements', 'network', 'resources', 'info'],
+            useShadowDom: false,
+            container: document.body,
+            autoScale: true,
+            defaults: {
+                displaySize: 50,
+                transparency: 0.9,
+                theme: 'Monokai Pro'
+            }
+        });
+        // eruda.show();
+        eruda.position({x: 10, y: 10});
+        eruda.scale(0.8);
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0a1929; /* Dark blue color for the entire page */
+        }
+        #game-container {
+            width: 100%;
+            height: calc(100% - 0px);
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container"></div>
+    <!-- Game script - Load last -->
+    <script src="game.js"></script>
+</body>
+</html>
